@@ -743,8 +743,8 @@ setTimer2(20);
  80005f0:	681b      	ldr	r3, [r3, #0]
  80005f2:	2b01      	cmp	r3, #1
  80005f4:	d111      	bne.n	800061a <main+0x52>
-		  setTimer1(50);
- 80005f6:	2032      	movs	r0, #50	; 0x32
+		  setTimer1(25);
+ 80005f6:	2019      	movs	r0, #25
  80005f8:	f000 f916 	bl	8000828 <setTimer1>
 		  if (index_led >=4) index_led=0;
  80005fc:	4b11      	ldr	r3, [pc, #68]	; (8000644 <main+0x7c>)

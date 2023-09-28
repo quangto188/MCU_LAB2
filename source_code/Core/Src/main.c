@@ -254,7 +254,7 @@ setTimer2(20);
   while (1)
   {
 	  if (timer1_flag ==1){
-		  setTimer1(50);
+		  setTimer1(25);
 		  if (index_led >=4) index_led=0;
 		  update7SEG(index_led++);
 	  }
