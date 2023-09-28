@@ -585,11 +585,11 @@ HAL_TIM_Base_Start_IT(&htim2);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-setTimer1(2);
- 80004cc:	2002      	movs	r0, #2
+setTimer1(10);
+ 80004cc:	200a      	movs	r0, #10
  80004ce:	f000 f933 	bl	8000738 <setTimer1>
-setTimer2(3);
- 80004d2:	2003      	movs	r0, #3
+setTimer2(20);
+ 80004d2:	2014      	movs	r0, #20
  80004d4:	f000 f944 	bl	8000760 <setTimer2>
 int led_status =1;
  80004d8:	2301      	movs	r3, #1
@@ -612,8 +612,8 @@ int led_status =1;
  80004f2:	2b02      	cmp	r3, #2
  80004f4:	d010      	beq.n	8000518 <main+0x68>
 			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
-			  display7SEG(2);
 			  led_status=1;
+			  display7SEG(2);
 			  break;
 		  default:
 			  break;
@@ -628,12 +628,12 @@ int led_status =1;
  8000504:	2180      	movs	r1, #128	; 0x80
  8000506:	4815      	ldr	r0, [pc, #84]	; (800055c <main+0xac>)
  8000508:	f000 fd0a 	bl	8000f20 <HAL_GPIO_WritePin>
-			  led_status =2;
- 800050c:	2302      	movs	r3, #2
- 800050e:	607b      	str	r3, [r7, #4]
 			  display7SEG(1);
- 8000510:	2001      	movs	r0, #1
- 8000512:	f7ff fe1b 	bl	800014c <display7SEG>
+ 800050c:	2001      	movs	r0, #1
+ 800050e:	f7ff fe1d 	bl	800014c <display7SEG>
+			  led_status =2;
+ 8000512:	2302      	movs	r3, #2
+ 8000514:	607b      	str	r3, [r7, #4]
 			  break;
  8000516:	e010      	b.n	800053a <main+0x8a>
 			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
@@ -646,12 +646,12 @@ int led_status =1;
  8000524:	2180      	movs	r1, #128	; 0x80
  8000526:	480d      	ldr	r0, [pc, #52]	; (800055c <main+0xac>)
  8000528:	f000 fcfa 	bl	8000f20 <HAL_GPIO_WritePin>
-			  display7SEG(2);
- 800052c:	2002      	movs	r0, #2
- 800052e:	f7ff fe0d 	bl	800014c <display7SEG>
 			  led_status=1;
- 8000532:	2301      	movs	r3, #1
- 8000534:	607b      	str	r3, [r7, #4]
+ 800052c:	2301      	movs	r3, #1
+ 800052e:	607b      	str	r3, [r7, #4]
+			  display7SEG(2);
+ 8000530:	2002      	movs	r0, #2
+ 8000532:	f7ff fe0b 	bl	800014c <display7SEG>
 			  break;
  8000536:	e000      	b.n	800053a <main+0x8a>
 		  }

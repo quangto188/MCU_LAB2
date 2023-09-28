@@ -221,14 +221,14 @@ int led_status =1;
 		  case 1:
 			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
 			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
-			  led_status =2;
 			  display7SEG(1);
+			  led_status =2;
 			  break;
 		  case 2:
 			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
 			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
-			  display7SEG(2);
 			  led_status=1;
+			  display7SEG(2);
 			  break;
 		  default:
 			  break;
