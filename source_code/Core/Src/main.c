@@ -304,6 +304,15 @@ void updateLEDMatrix(int index){
               break;
       }
 }
+
+
+void shift_left(uint16_t array[8]) {
+	uint16_t temp = array[7];
+	for (int i = 7; i > 0; i--) {
+		array[i] = array[i - 1];
+	}
+	array[0] = temp;
+}
 /* USER CODE END 0 */
 
 /**
@@ -343,6 +352,7 @@ HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE BEGIN WHILE */
 int i=-1;
 setTimer1(2);
+setTimer2(3);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -352,6 +362,11 @@ setTimer1(2);
 		  if (i >= MAX_LED_MATRIX) i=0;
 		  GPIOA->ODR = ~0x8000>>i;
 		  GPIOB->ODR = matrix_buffer[i];
+	  }
+	  if (timer2_flag == 1) {
+			  // Scroll 'A' in the left direction
+			  setTimer2(100);
+			  shift_left(matrix_buffer);
 	  }
     /* USER CODE BEGIN 3 */
   }
